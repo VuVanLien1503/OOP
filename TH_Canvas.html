@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  Vẽ đường thẳng
+  <canvas id="mayCanvas" width="200" height="100">
+
+  </canvas>
+</div>
+<div>
+  Vẽ đường tròn
+  <canvas id="mayCanvas1" width="200" height="100">
+
+  </canvas>
+
+</div>
+<div>
+  Vẽ chữ
+  <canvas id="mayCanvas2" width="200" height="100">
+  </canvas>
+
+</div>
+</body>
+<script>
+  let c =document.getElementById("mayCanvas");
+  let ctx = c.getContext("2d");
+  ctx.moveTo(0,0);
+  ctx.lineTo(200,100);
+  ctx.stroke();
+
+  let tron = document.getElementById("mayCanvas1");
+  let ctx1 = tron.getContext("2d");
+  ctx1.beginPath();
+  ctx1.arc(90,50,40,0,2 *Math.PI)
+  ctx1.stroke();
+
+
+  let text = document.getElementById("mayCanvas2");
+  let ctxText = text.getContext("2d");
+  ctxText.font = "30px Arial";
+  ctxText.fillText("Hello World",10,50);
+</script>
+</html>
