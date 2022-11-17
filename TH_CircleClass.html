@@ -18,10 +18,10 @@
             this.radius=radius;
         }
         this.getArea = function() {
-            return Math.PI * radius * radius;
+            return Math.PI * this.radius * this.radius;
         }
         this.circle=function (radius){
-            this.setRadius=radius;
+            this.setRadius(radius);
         }
 
         this.toString =function () {
@@ -31,13 +31,10 @@
         }
 
     };
-    let circle = new Circle(5);
+    let circle = new Circle(2);
     document.getElementById("result1").innerHTML=circle.toString();
     circle.circle(+prompt("nhap duong kinh"));
     document.getElementById("result2").innerHTML=circle.toString();
-
-
-
 
 </script>
 
