@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p id="result"></p><br>
+<p id="result1"></p><br>
+<p id="result2"></p><br>
+<canvas id="DemoCanvas" width="500" height="600"></canvas>
+<body>
+<script>
+    function Rectangle(width, height) {
+        this.width = width;
+        this.height = height;
+
+
+        this.getWidth = function () {
+            return this.width;
+        }
+        this.getHeight = function () {
+            return this.height;
+        }
+
+
+        this.getArea = function () {
+            return this.width * this.height;
+        }
+
+        this.getPerimeter = function () {
+            return (this.width + this.height) * 2;
+        }
+
+        this.setWidth = function (width) {
+            this.width = width;
+        }
+
+        this.setHeight = function (height) {
+            this.height = height;
+        }
+
+
+        this.createRectangle = function (width, height) {
+            this.setWidth(width);
+            this.setHeight(height);
+        }
+
+
+        this.toString = function () {
+            let width = this.getWidth();
+            let height = this.getHeight();
+            let area = this.getArea();
+            let perimeter = this.getPerimeter();
+            return ("width:" + width + "<br>" + "height :" + height + "<br>" +
+                "area = " + area + "/perimeter=" + perimeter)
+
+        }
+    }
+
+    //Tao Doi Tuong:
+    let myRectangle = new Rectangle(150, 50);
+    let result = myRectangle.toString();
+    document.getElementById("result").innerHTML = result;
+    myRectangle.setWidth(prompt("Nhap width"))
+    result=myRectangle.toString();
+    document.getElementById("result1").innerHTML = result;
+    myRectangle.createRectangle(prompt(), prompt());
+    result=myRectangle.toString();
+    document.getElementById("result2").innerHTML = result;
+    drawRectangle(result2);
+function drawRectangle(){
+    let canvas = document.getElementById("DemoCanvas");
+    let ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#fa4b2a';
+    ctx.fillRect(10, 10, myRectangle.width, myRectangle.height)
+}
+</script>
+</body>
+</html>

@@ -23,21 +23,16 @@
         this.circle=function (radius){
             this.setRadius(radius);
         }
-
         this.toString =function () {
             let radius= this.getRadius();
             let area = this.getArea()
             return (" radius : "+radius+"  area :"+area);
         }
-
     };
     let circle = new Circle(2);
     document.getElementById("result1").innerHTML=circle.toString();
     circle.circle(+prompt("nhap duong kinh"));
     document.getElementById("result2").innerHTML=circle.toString();
-
 </script>
-
-
 
 </html>
