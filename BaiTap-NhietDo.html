@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+
+<script>
+    class Temperature{
+        constructor(number) {
+            this.number=number;
+        }
+        getNumber(){
+            return this.number;
+        }
+        setNumber(number){
+            this.number=number;
+        }
+        getConvertFah(){
+            return 9/5*this.number+32;
+        }
+        getConverKe(){
+            return this.number + 273.15;
+        }
+        getToString(){
+            let f =this.getConvertFah();
+            let kenVin =this.getConverKe();
+            return"Temperature C->F = "+ f+" Temperature C->KenVin= "+kenVin;
+        }
+    }
+
+    let temperature = new Temperature(prompt(" Nhap Nhiet do"));
+    document.getElementById("result").innerHTML=temperature.getToString();
+</script>
+</body>
+</html>
