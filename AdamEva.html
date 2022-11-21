@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdamEva</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Adame</th>
+        <th>App</th>
+        <th>Eva</th>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="adamEat()">Adam</button>
+        </td>
+        <td>
+            <p id="apple">10kg</p>
+        </td>
+        <td>
+            <button onclick="evaEat()">Eva</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p id="adamSay">Adam Say</p>
+        </td>
+        <td>
+
+        </td>
+        <td>
+            <p id="evaSay">Eva Say</p>
+        </td>
+        </td>
+    </tr>
+    <tr>
+        <td><p id="adam">65kg</p></td>
+        <td><p></p></td>
+        <td><p id="eva">45kg</p></td>
+    </tr>
+</table>
+
+<script>
+    class App {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        isEmpty() {
+            let check = true;
+            if (this.weight === 0) {
+                check = false;
+            }
+            return check;
+        }
+
+    };
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        setGender(gender) {
+            this.gender = gender;
+        }
+
+        setWeight(weight) {
+            this.weight = weight;
+        }
+
+
+        getCheckApple(Apple){
+            let check=true;
+            if (Apple===0){
+                check=false;
+            }
+            return check;
+        }
+
+        getEat(Apple){
+            if (this.getCheckApple(Apple)){
+                this.weight+=1;
+            }
+        }
+
+        getSay(){
+            let name= this.name;
+            let string = " sayApple=";
+            return name+""+ string+""+apple.weight;
+        }
+    }
+
+    let eva = new Human("Eva","Nu",42);
+    let adam = new Human("adam","Nam",65);
+    let apple = new App(10);
+
+
+    function adamEat(){
+        console.log(apple.isEmpty())
+        if (apple.isEmpty()){
+            adam.getEat(apple)
+            apple.decrease();
+            let say=eva.getSay();
+            document.getElementById("evaSay").innerHTML=say
+            let weight=adam.weight;
+            console.log(weight)
+            let resultApple=apple.weight;
+            console.log(resultApple)
+            document.getElementById("apple").innerHTML=resultApple;
+            document.getElementById("adam").innerHTML=weight;
+        }
+
+    }
+    function evaEat(){
+        console.log(apple.isEmpty())
+        if (apple.isEmpty()){
+            eva.getEat(apple)
+            apple.decrease();
+            let say=adam.getSay();
+            document.getElementById("adamSay").innerHTML=say;
+            let weight=eva.weight;
+            console.log(weight)
+            let resultApple=apple.weight;
+            console.log(resultApple)
+            document.getElementById("apple").innerHTML=resultApple;
+            document.getElementById("eva").innerHTML=weight;
+        }
+
+    }
+</script>
+</body>
+</html>
